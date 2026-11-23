@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Diario 06/07 · 6. Géneros literarios · 5to. Bachillerato en Mercadotecnia 2027</title>
+  <style>
+    :root {
+      --azul: #1269A8;
+      --amarillo: #F7D615;
+      --verde-gris: #54887D;
+      --azul-claro: #88B5C7;
+      --oliva: #A6B046;
+      --fondo: #F2F5E9;
+      --texto: #1e293b;
+      --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      padding: 16px;
+      line-height: 1.55;
+    }
+    .marco {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: var(--blanco);
+      border: 3px solid var(--amarillo);
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(18, 105, 168, 0.14);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, var(--azul) 0%, #0d4f80 100%);
+      color: var(--blanco);
+      padding: 18px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 4px solid var(--amarillo);
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1 1 540px;
+    }
+    .logo-badge {
+      min-width: 72px;
+      height: 68px;
+      background: var(--blanco);
+      color: var(--azul);
+      border-radius: 10px;
+      padding: 6px 10px;
+      border: 2px solid var(--amarillo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-align: center;
+      line-height: 1.15;
+    }
+    .inst-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--amarillo);
+      font-weight: 700;
+    }
+    .header h1 {
+      font-size: 1.28rem;
+      font-weight: 700;
+      margin: 3px 0;
+    }
+    .header p {
+      font-size: 0.9rem;
+      opacity: 0.94;
+    }
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .timer-box {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid var(--amarillo);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+    }
+    .timer-display {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      color: var(--amarillo);
+      font-size: 1rem;
+    }
+    .btn-sm {
+      background: var(--blanco);
+      color: var(--azul);
+      border: none;
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .btn-fs {
+      background: var(--amarillo);
+      color: #102a43;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .sub-bar {
+      background: #e8f1f7;
+      padding: 10px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      border-bottom: 2px solid var(--azul-claro);
+    }
+    .date-input {
+      border: 1px solid var(--azul);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      color: var(--texto);
+      background: var(--blanco);
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      background: #dce8ef;
+      padding: 8px 16px 0 16px;
+      gap: 6px;
+      border-bottom: 3px solid var(--azul);
+    }
+    .tab-btn {
+      background: var(--blanco);
+      color: var(--azul);
+      border: 2px solid var(--azul-claro);
+      border-bottom: none;
+      padding: 10px 16px;
+      border-radius: 10px 10px 0 0;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .tab-btn.active {
+      background: var(--azul);
+      color: var(--blanco);
+      border-color: var(--azul);
+    }
+    .tab-panel {
+      display: none;
+      padding: 22px 24px;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+    .section-sub {
+      color: var(--azul);
+      font-size: 1.08rem;
+      margin: 16px 0 10px 0;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--amarillo);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .card {
+      background: var(--blanco);
+      border: 2px solid var(--verde-gris);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      color: var(--verde-gris);
+      margin: 6px 0;
+      font-size: 1.04rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--oliva);
+      color: var(--blanco);
+      font-weight: 700;
+      font-size: 0.76rem;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+    ul.lista-plan {
+      margin-left: 18px;
+      margin-top: 6px;
+    }
+    ul.lista-plan li {
+      margin-bottom: 6px;
+    }
+    table.rubrica {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    table.rubrica th, table.rubrica td {
+      border: 1px solid var(--azul-claro);
+      padding: 10px;
+      text-align: left;
+    }
+    table.rubrica th {
+      background: var(--azul);
+      color: var(--blanco);
+    }
+    .footer-note {
+      background: #f8faf5;
+      border-top: 2px solid var(--azul-claro);
+      padding: 12px 24px;
+      font-size: 0.8rem;
+      color: #475569;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="planRoot" class="marco">
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-badge">COLEGIO<br/>MONTANO</div>
+        <div>
+          <div class="inst-tag">Colegio Montano · Plan Diario (70 min) · Quinto Bachillerato en Mercadotecnia · Unidad I</div>
+          <h1>Plan Diario 06/07 · 6. Géneros literarios</h1>
+          <p>Géneros literarios: narrativo, lírico y dramático — rasgos y aplicaciones</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="timer-box">
+          <span>Cronómetro:</span>
+          <span id="timerDisplay" class="timer-display">70:00</span>
+          <button class="btn-sm" type="button" onclick="toggleTimer()">Iniciar/Pausar</button>
+          <button class="btn-sm" type="button" onclick="resetTimer()">Reiniciar</button>
+        </div>
+        <button class="btn-fs" type="button" onclick="toggleFullScreen()">&#9974; Pantalla Completa</button>
+      </div>
+    </header>
+
+    <div class="sub-bar">
+      <div><strong>Docente:</strong> Brenda Hidalgo</div>
+      <div><strong>Curso:</strong> Comunicación · <strong>Carrera:</strong> Quinto Bachillerato en Mercadotecnia · <strong>Unidad:</strong> I (8 semanas · 7 sesiones previstas)</div>
+      <div><strong>Periodo:</strong> 11 de enero al 5 de marzo · <strong>Fecha editable:</strong> <input class="date-input" type="date" value="2027-02-15" aria-label="Fecha editable" /></div>
+      <div><strong>Guía asociada:</strong> guia_06_tema_06.html</div>
+    </div>
+
+    <nav class="tabs" role="tablist" aria-label="Fases y componentes del plan diario">
+      <button class="tab-btn active" type="button" onclick="openTab(event, 'p-general')">Enfoque y CNB</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'p-intro')">1. Motivación (5 min)</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'p-ind')">2. Trabajo Individual (20 min)</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'p-coop')">3. Trabajo Cooperativo (30 min)</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'p-plen')">4. Plenaria y Evaluación (15 min)</button>
+    </nav>
+
+    <section id="p-general" class="tab-panel active">
+      <h3 class="section-sub">Alineación Curricular (CNB), Hábito Montano y Guía Asociada</h3>
+      <div class="grid-2">
+        <div class="card">
+          <span class="badge">CNB Bachillerato en Mercadotecnia · Unidad I</span>
+          <h3>Competencia e Indicador de Logro</h3>
+          <p><strong>Competencia:</strong> CNB Comunicación y Lenguaje (Bachillerato en Mercadotecnia): Distingue los géneros literarios y analiza cómo sus recursos estructuran relatos y discursos.</p>
+          <p style="margin-top:8px;"><strong>Indicador de logro:</strong> Clasifica textos según su género literario y justifica su elección con rasgos formales.</p>
+          <p style="margin-top:8px;"><strong>Enfoque de la sesión:</strong> Caracterización y contraste de los géneros narrativo, lírico y dramático y sus convenciones formales.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Hábito Montano y Recurso Asociado</span>
+          <h3>Formación Integral y Vinculación</h3>
+          <p><strong>Hábito Montano:</strong> Creatividad estructurada, análisis formal y colaboración en equipo</p>
+          <p style="margin-top:8px;"><strong>Guía interactiva asociada:</strong> <code>guia_06_tema_06.html</code></p>
+          <p style="margin-top:8px;"><strong>Recursos:</strong> Pizarra de clase, guía interactiva asociada, cuaderno de trabajo, ejemplos/textos de análisis y rúbrica de plenaria.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="p-intro" class="tab-panel">
+      <h3 class="section-sub">Fase 1 · Introducción / Motivación (5 minutos)</h3>
+      <div class="card">
+        <span class="badge">0:00 – 0:05 · Activación</span>
+        <h3>Apertura, Propósito y Conexión con la Carrera</h3>
+        <ul class="lista-plan">
+          <li>Saludo, registro de asistencia y actualización de la fecha editable si corresponde.</li>
+          <li>Presentación del objetivo de la sesión 06/07 sobre <strong>6. Géneros literarios</strong> y su relevancia en comunicación y mercadotecnia.</li>
+          <li>Activación de saberes previos mediante una pregunta generadora breve.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="p-ind" class="tab-panel">
+      <h3 class="section-sub">Fase 2 · Trabajo Individual (20 minutos)</h3>
+      <div class="card">
+        <span class="badge">0:05 – 0:25 · Autonomía</span>
+        <h3>Estudio Conceptual, Ejemplos y Respuesta Autónoma</h3>
+        <ul class="lista-plan">
+          <li>Revisión de <em>Teoría</em> y <em>Ejemplos (15)</em> en la guía asociada <code>guia_06_tema_06.html</code>.</li>
+          <li>Resolución autónoma de los <em>Ejercicios (15)</em>, <em>Reflexión</em> y <em>Evaluación</em> sin respuestas mostradas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="p-coop" class="tab-panel">
+      <h3 class="section-sub">Fase 3 · Trabajo Cooperativo (30 minutos)</h3>
+      <div class="card">
+        <span class="badge">0:25 – 0:55 · Colaboración</span>
+        <h3>Contraste de Respuestas, Análisis Aplicado y Coevaluación</h3>
+        <ul class="lista-plan">
+          <li>En parejas o equipos pequeños, contrastan sus respuestas autónomas de <code>guia_06_tema_06.html</code>.</li>
+          <li>Resuelven y discuten casos aplicados al tema de la sesión y a la comunicación en mercadotecnia.</li>
+          <li>Revisan claridad argumentativa, precisión léxica y corrección ortográfica antes del cierre.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="p-plen" class="tab-panel">
+      <h3 class="section-sub">Fase 4 · Plenaria / Cierre y Rúbrica de Evaluación (15 minutos)</h3>
+      <div class="card">
+        <span class="badge">0:55 – 1:10 · Síntesis y Evaluación</span>
+        <h3>Socialización, Evaluación (Diagnóstica · Formativa · Sumativa) y Lista de Cotejo</h3>
+        <ul class="lista-plan">
+          <li><strong>Evaluación diagnóstica:</strong> Recuperación de saberes previos al inicio de la sesión.</li>
+          <li><strong>Evaluación formativa:</strong> Revisión de respuestas autónomas en la guía, argumentación cooperativa y aplicación del tema.</li>
+          <li><strong>Evaluación sumativa:</strong> Registro de evidencias de desempeño de la Unidad I.</li>
+        </ul>
+        <table class="rubrica">
+          <thead>
+            <tr>
+              <th>Criterio de Plenaria</th>
+              <th>Logrado</th>
+              <th>En proceso</th>
+              <th>Por reforzar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dominio conceptual y aplicación del tema</td>
+              <td><input type="checkbox" /> Aplica con precisión y fundamento</td>
+              <td><input type="checkbox" /> Aplica con apoyo parcial</td>
+              <td><input type="checkbox" /> Requiere refuerzo conceptual</td>
+            </tr>
+            <tr>
+              <td>Respuesta autónoma en guía interactiva</td>
+              <td><input type="checkbox" /> Completa con autonomía y rigor</td>
+              <td><input type="checkbox" /> Avance parcial o breve</td>
+              <td><input type="checkbox" /> Sin completar</td>
+            </tr>
+            <tr>
+              <td>Argumentación y trabajo cooperativo</td>
+              <td><input type="checkbox" /> Aporta con claridad y escucha</td>
+              <td><input type="checkbox" /> Participación limitada</td>
+              <td><input type="checkbox" /> Requiere mayor integración</td>
+            </tr>
+            <tr>
+              <td>Hábito Montano y corrección comunicativa</td>
+              <td><input type="checkbox" /> Redacción cuidada y actitud ética</td>
+              <td><input type="checkbox" /> Detalles menores por pulir</td>
+              <td><input type="checkbox" /> Requiere revisión de forma</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer-note">
+      <div><strong>Archivo de plan:</strong> plan_06_tema_06.html · <strong>Guía asociada:</strong> guia_06_tema_06.html · <strong>Sesión:</strong> 6/7</div>
+      <div>Colegio Montano · Docente: Brenda Hidalgo · Quinto Bachillerato en Mercadotecnia · Unidad I (2027)</div>
+    </footer>
+  </div>
+
+  <script>
+    function openTab(evt, panelId) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(panelId).classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+    }
+
+    function toggleFullScreen() {
+      const elem = document.getElementById('planRoot');
+      if (!document.fullscreenElement) {
+        if (elem.requestFullscreen) elem.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+      }
+    }
+
+    let totalSeconds = 70 * 60;
+    let timerInterval = null;
+    function renderTimer() {
+      const m = Math.floor(totalSeconds / 60);
+      const s = totalSeconds % 60;
+      document.getElementById('timerDisplay').textContent =
+        String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }
+    function toggleTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      } else {
+        timerInterval = setInterval(() => {
+          if (totalSeconds > 0) {
+            totalSeconds -= 1;
+            renderTimer();
+          } else {
+            clearInterval(timerInterval);
+            timerInterval = null;
+          }
+        }, 1000);
+      }
+    }
+    function resetTimer() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      totalSeconds = 70 * 60;
+      renderTimer();
+    }
+    renderTimer();
+  </script>
+</body>
+</html>
